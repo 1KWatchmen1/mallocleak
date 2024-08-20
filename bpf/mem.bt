@@ -1,0 +1,12 @@
+
+
+uprobe:/lib/x86_64-linux-gnu/libc.so.6:malloc
+/comm == "6"/
+{
+	printf("malloc");
+}
+uprobe:/lib/x86_64-linux-gnu/libc.so.6:free
+/comm == "6"/
+{
+         printf("free");
+}
